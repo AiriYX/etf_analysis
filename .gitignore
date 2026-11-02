@@ -1,0 +1,23 @@
+# Python virtual environment
+.venv/
+
+# JetBrains IDE
+.idea/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# Local database file
+*.db
