@@ -1,0 +1,532 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20263.26.1022.1645                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='378d6d569a36f5e509aae1a1fcd7957b7616ebe263140e9ec1cee1e3acb3d3f1' _.fcp.WorkbookFingerprinting.true...creator-author-id='378d6d569a36f5e509aae1a1fcd7957b7616ebe263140e9ec1cee1e3acb3d3f1' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='378d6d569a36f5e509aae1a1fcd7957b7616ebe263140e9ec1cee1e3acb3d3f1' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='378d6d569a36f5e509aae1a1fcd7957b7616ebe263140e9ec1cee1e3acb3d3f1' original-version='18.1' source-build='2026.3.0 (20263.26.1022.1645)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Holding Period' datatype='string' name='[Parameter 0635310670028800]' param-domain-type='list' role='measure' type='nominal' value='&quot;12 Months&quot;'>
+        <calculation class='tableau' formula='&quot;12 Months&quot;' />
+        <members>
+          <member value='&quot;6 Months&quot;' />
+          <member value='&quot;12 Months&quot;' />
+          <member value='&quot;24 Months&quot;' />
+        </members>
+      </column>
+      <column caption='Deposit Schedule' datatype='string' name='[Parameter 0635310671994882]' param-domain-type='list' role='measure' type='nominal' value='&quot;Upfront&quot;'>
+        <calculation class='tableau' formula='&quot;Upfront&quot;' />
+        <members>
+          <member value='&quot;Upfront&quot;' />
+          <member value='&quot;Spread Over One Month&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='mock_investment_data' inline='true' name='federated.11213r103j4s3b17j8ban0z27r8b' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='mock_investment_data' name='textscan.0w4wemh1sv3x5s1cnm0bx12x9b6o'>
+            <connection class='textscan' directory='C:/Users/bryan/OneDrive/Desktop/Study/9th semester/Csc 460/etf_analysis' filename='mock_investment_data.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0w4wemh1sv3x5s1cnm0bx12x9b6o' name='mock_investment_data.csv' table='[mock_investment_data#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AS' separator=','>
+            <column datatype='date' name='Start Date' ordinal='0' />
+            <column datatype='integer' name='Month' ordinal='1' />
+            <column datatype='string' name='Strategy' ordinal='2' />
+            <column datatype='integer' name='Investment Amount' ordinal='3' />
+            <column datatype='real' name='Monthly Return' ordinal='4' />
+            <column datatype='real' name='Investment Value' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AS&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Start Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Start Date]</local-name>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias>Start Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Strategy</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Strategy]</local-name>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias>Strategy</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Investment Amount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Investment Amount]</local-name>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias>Investment Amount</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Monthly Return</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Monthly Return]</local-name>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias>Monthly Return</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Investment Value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Investment Value]</local-name>
+            <parent-name>[mock_investment_data.csv]</parent-name>
+            <remote-alias>Investment Value</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Holding Period Filter' datatype='boolean' name='[Calculation_0635310670594049]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Month] &lt;=&#13;&#10;CASE [Parameters].[Parameter 0635310670028800]&#13;&#10;WHEN &quot;6 Months&quot; THEN 6&#13;&#10;WHEN &quot;12 Months&quot; THEN 12&#13;&#10;WHEN &quot;24 Months&quot; THEN 24&#13;&#10;END' />
+      </column>
+      <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+      <column datatype='string' name='[Strategy]' role='dimension' type='nominal' />
+      <column caption='mock_investment_data.csv' datatype='table' name='[__tableau_internal_object_id__].[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]' role='measure' type='quantitative' />
+      <column-instance column='[Strategy]' derivation='None' name='[none:Strategy:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/bryan/AppData/Local/Temp/TableauTemp/#TableauTemp_1lw7sws1316j9q1f7l1d712rea8a.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='11/17/2026 07:04:35 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Start Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Start Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Start Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>mock_investment_data.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Month</remote-alias>
+              <ordinal>1</ordinal>
+              <family>mock_investment_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Strategy</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Strategy]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Strategy</remote-alias>
+              <ordinal>2</ordinal>
+              <family>mock_investment_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Investment Amount</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Investment Amount]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Investment Amount</remote-alias>
+              <ordinal>3</ordinal>
+              <family>mock_investment_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Monthly Return</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Monthly Return]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Monthly Return</remote-alias>
+              <ordinal>4</ordinal>
+              <family>mock_investment_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>121</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Investment Value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Investment Value]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Investment Value</remote-alias>
+              <ordinal>5</ordinal>
+              <family>mock_investment_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>242</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Strategy:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Lump Sum&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Periodic&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Holding Period' datatype='string' name='[Parameter 0635310670028800]' param-domain-type='list' role='measure' type='nominal' value='&quot;12 Months&quot;'>
+          <calculation class='tableau' formula='&quot;12 Months&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='mock_investment_data.csv' id='mock_investment_data.csv_E3F1CF04312849A98A5B5F721462BB26'>
+            <properties context=''>
+              <relation connection='textscan.0w4wemh1sv3x5s1cnm0bx12x9b6o' name='mock_investment_data.csv' table='[mock_investment_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AS' separator=','>
+                  <column datatype='date' name='Start Date' ordinal='0' />
+                  <column datatype='integer' name='Month' ordinal='1' />
+                  <column datatype='string' name='Strategy' ordinal='2' />
+                  <column datatype='integer' name='Investment Amount' ordinal='3' />
+                  <column datatype='real' name='Monthly Return' ordinal='4' />
+                  <column datatype='real' name='Investment Value' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Investment Growth'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='mock_investment_data' name='federated.11213r103j4s3b17j8ban0z27r8b' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Holding Period' datatype='string' name='[Parameter 0635310670028800]' param-domain-type='list' role='measure' type='nominal' value='&quot;12 Months&quot;'>
+              <calculation class='tableau' formula='&quot;12 Months&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.11213r103j4s3b17j8ban0z27r8b'>
+            <column caption='Holding Period Filter' datatype='boolean' name='[Calculation_0635310670594049]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Month] &lt;=&#13;&#10;CASE [Parameters].[Parameter 0635310670028800]&#13;&#10;WHEN &quot;6 Months&quot; THEN 6&#13;&#10;WHEN &quot;12 Months&quot; THEN 12&#13;&#10;WHEN &quot;24 Months&quot; THEN 24&#13;&#10;END' />
+            </column>
+            <column datatype='real' name='[Investment Value]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Month]' role='dimension' type='quantitative' />
+            <column datatype='date' name='[Start Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Strategy]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_0635310670594049]' derivation='None' name='[none:Calculation_0635310670594049:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Month]' derivation='None' name='[none:Month:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Start Date]' derivation='None' name='[none:Start Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Strategy]' derivation='None' name='[none:Strategy:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Investment Value]' derivation='Sum' name='[sum:Investment Value:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.11213r103j4s3b17j8ban0z27r8b].[none:Calculation_0635310670594049:nk]'>
+            <groupfilter function='member' level='[none:Calculation_0635310670594049:nk]' member='true' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.11213r103j4s3b17j8ban0z27r8b].[none:Start Date:ok]'>
+            <groupfilter function='member' level='[none:Start Date:ok]' member='#2023-01-01#' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Calculation_0635310670594049:nk]</column>
+            <column>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Start Date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.11213r103j4s3b17j8ban0z27r8b].[none:Strategy:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.11213r103j4s3b17j8ban0z27r8b].[sum:Investment Value:qk]</rows>
+        <cols>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Month:qk]</cols>
+      </table>
+      <simple-id uuid='{CF6B920A-94F1-4DF4-8158-A6401D0E20B8}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' maximized='true' name='Investment Growth'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card param='[federated.11213r103j4s3b17j8ban0z27r8b].[none:Start Date:ok]' type='filter' />
+            <card pane-specification-id='0' param='[federated.11213r103j4s3b17j8ban0z27r8b].[none:Strategy:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 0635310670028800]' type='parameter' />
+            <card mode='compact' param='[Parameters].[Parameter 0635310671994882]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Calculation_0635310670594049:nk]</field>
+            <field>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Month:qk]</field>
+            <field>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Start Date:ok]</field>
+            <field>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Start Date:qk]</field>
+            <field>[federated.11213r103j4s3b17j8ban0z27r8b].[none:Strategy:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{95A3A84D-472A-4C14-B025-E0C915B7DF2F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Investment Growth' width='192'>
+      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
+      9wglAMU7zf8H7lMPgTjYBkMAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
